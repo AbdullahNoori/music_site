@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content%}
+    <div class="container">
+      <div class="row justify-content-center">
+        <h2>Add Album for {{musician}}</h2>
+      </div>
+      <div class="row justify-content-center mt-5">
+          <form action="" class="form-container" id="" method="post">{% csrf_token %}
+            <input type="hidden" value="{{musician.name}}" name="artist">
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary btn-lg" onclick="">Add</button>
+          </form>
+        </div>
+    </div>
+{% endblock %}

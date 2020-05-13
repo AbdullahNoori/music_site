@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> Song Details</h1>
+
+    <ul>
+      
+      <li>
+        <h4>Song name: {{song.name}}</h4>
+      </li>
+        <li>
+          <a href="/musician/{{ song.artist.id }}">Artist: {{song.artist}}</a>
+        </li>
+        <li>
+          <a href="/music/album_detail/{{ song.album.id }}">Album: {{song.album}}</a>
+        </li>
+        <li>
+          <span>Stars: {{song.num_stars}}</span>
+        </li>
+        
+      </ul>
+
+  {% endblock %}

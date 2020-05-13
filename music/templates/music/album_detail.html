@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Albums</h1>
+
+  <h2>Artist: {{album.artist}}</h2>
+
+  <h3>SONGS:</h3>
+
+  <ul>
+    {% for song in album.song_set.all %}
+
+    <li>
+      <a href="/music/song/{{song.id }}">{{ song.name }} </a>
+      <br>
+    </li>
+
+    {%endfor%}
+  </ul>
+
+  <a href="/song/new/{{album.artist.id}}/{{album.id}}">Add Songs</a>
+
+
+  <br>
+  <br>
+
+  <h1>{{ album.name }} album details</h1>
+
+  <a href='/musician/{{album.artist.id}}/'>Artist: {{ album.artist }}</a>
+  <h3>Genre: {{ album.genre }}</h3>
+
+  <h3>Publish Date: {{ album.publish_date }}</h3>
+  
+  <a href='/album/new/{{album.artist.id}}'>Add Album</a>
+<br>
+<br>
+  <a href='/'>Return home</a>
+
+  {% endblock %}

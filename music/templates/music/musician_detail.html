@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3><strong> Musicican</strong> </h3>
+
+<div class="container">
+<div class="row">
+{% if musician %}
+        <h3 href="">{{ musician.name }}</h3>
+        <div class="row mt-5">
+            {% if albums %}
+            <h4>Albums</h4>
+                {% for album in albums %}
+                <div class="col">
+                    <ul>
+                        <li>
+                            <a href="/music/album_detail/{{album.id}}" class="">{{album.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+            <br>
+        <div class="row m-5">
+            <a href='/album/new/{{musician.id}}'>Add Albums</a>
+        </div>
+{% else %}
+    <p> No musician's are available </p>    
+{% endif %}
+{% endblock %}
+</div>
+</div>
